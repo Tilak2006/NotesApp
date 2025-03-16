@@ -4,8 +4,8 @@ import Landing from './Landing';
 import Notes from './Notes';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Home';
-import Login from './Login';
 import Footer from './Footer';
+import Loginn from './Loginn';
 
 function App() {
  
@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element = {<Home />}/>
         <Route path="/notes" element = {<Notes />}/>
         <Route path="/create" element = {<Landing />}/>
-        <Route path="/login" element = {<Login />}/>
+        <Route path="/login" element = {<Loginn />}/>
       </Routes>
       <Footer />
     </Router>

@@ -1,26 +1,25 @@
+import "./Loginn.css"
 import { useState } from "react";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
-
-function Login() {
+function Loginn(){
     const particlesInit = useCallback(async (engine) => {
-        await loadSlim(engine);
-    }, []);
-
-    const [email, setEmail] = useState("");  // Separate state for email
-    const [password, setPassword] = useState("");  // Separate state for password
-
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        console.log("Email:", email, "Password:", password);
-    };
-
-return (
+            await loadSlim(engine);
+        }, []);
     
-    <>
-    <Particles
+        const [email, setEmail] = useState("")
+        const [password, setPassword] = useState("")
+    
+        const handleOnSubmit = (e) => {
+            e.preventDefault();
+            console.log("User Input: ", text);
+        }
+    
+        return(
+            <>
+            <Particles
                     id="tsparticles"
                     init={particlesInit}
                     options={{
@@ -53,32 +52,33 @@ return (
                         },
                     }}
                 />
-                <div className="login-formm">
-                <form onSubmit={handleOnSubmit}>
-                    <h2>LOGIN</h2>
-                <input 
-                type="text"
-                placeholder="email" 
-                value={email}
-                onChange={(e) => setText(e.target.value)}
-                />
-                <input 
-                type="text"
-                placeholder="password" 
-                value={password}
-                onChange={(e) => setText(e.target.value)}
-                />
-                <button
-                type="submit"
-                >
-                    Submit
-                </button>
+            
+            <div className="content">
+                <h1 className="notes-title2">LOGIN</h1>
                 
+                <form onSubmit={handleOnSubmit}>
+                    <input 
+                    type="text"
+                    placeholder="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input 
+                    type="text"
+                    placeholder="email" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <button
+                    type="login"
+                    >
+                        LOGIN
+                    </button>
+                    
                 </form>
-                </div>
+            </div>
+            </>
+        );
+    }
 
-    </>
-);
-}
-
-export default Login;
+export default Loginn
