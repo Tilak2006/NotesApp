@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&display=swap');
+
+
+.home-content{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 100px;
+    
+}
+.main-text {
+    font-size: 80px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: capitalize;
+    flex-direction: column;
+    text-align: center; 
+    line-height: 1.1; 
+    transition: text-shadow 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.new-text h1 {
+    background: linear-gradient(to right, #ED7E00, #ff0a0a); /* Orange gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+::selection{
+    color: #ED7E00;
+}
+
+#tsparticles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send to background */
+}

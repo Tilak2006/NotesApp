@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    font-family: "Just Another Hand";
+    font-size: 24px;
+    position: relative;
+    width: 100%;
+    z-index: auto; 
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    padding: 10px 20px; 
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar li a {
+    text-decoration: none; 
+    color: white;
+    cursor: pointer; 
+    display: inline-block; 
+    padding: 5px 10px; 
+}
+
+.navbar li:hover{
+    transform: scale(1.1);
+}

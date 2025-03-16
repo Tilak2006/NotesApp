@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Labrada:ital,wght@0,100..900;1,100..900&family=Langar&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Just Another Hand";
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    gap: 10px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.281);
+}
+
+input {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 24px;
+    background-color: transparent;
+    color: white;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+
+}
+button {
+    background-color: #ed7e00;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+button:hover {
+    background-color: #ff0a0a;
+}
+
+#tsparticles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send to background */
+}
