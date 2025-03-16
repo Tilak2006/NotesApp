@@ -2,6 +2,8 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import "./Home.css"
+import Landing from "./Landing";
+import Notes from "./Notes";
 
 function Home(){
 
@@ -56,12 +58,19 @@ function Home(){
                 </div>
             </section>
             <section className="different-content">
-                <div className="containertwo">
-                    <h2>
-                        
-                    </h2>
-                </div>
+                
             </section>
+            <section className="landing">
+                <Landing />
+            </section>
+            <section>
+
+            </section>
+            <section className="new">
+                
+                <Notes />
+            </section>
+            
         </>
     );
 

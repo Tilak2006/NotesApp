@@ -5,6 +5,7 @@ import Notes from './Notes';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Home';
 import Login from './Login';
+import Footer from './Footer';
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
         <Route path="/create" element = {<Landing />}/>
         <Route path="/login" element = {<Login />}/>
       </Routes>
+      <Footer />
     </Router>
   );
 }

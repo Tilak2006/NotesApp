@@ -22,7 +22,6 @@ function Landing(){
 
     return(
         <>
-        <div className="content">
         <Particles
                 id="tsparticles"
                 init={particlesInit}
@@ -56,6 +55,10 @@ function Landing(){
                     },
                 }}
             />
+        
+        <div className="content">
+            <h1 className="notes-title2">CREATE</h1>
+            
             <form onSubmit={handleOnSubmit}>
                 <input 
                 type="text"
@@ -66,7 +69,7 @@ function Landing(){
                 <button
                 type="submit"
                 >
-                    Submit
+                    CREATE
                 </button>
                 
             </form>

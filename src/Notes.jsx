@@ -49,8 +49,9 @@ function Notes(){
                         }}
                     />
                     <section className="notes-content">
-                <h1 className="notes-title">MY NOTES</h1>
+                
                 <div className="notes-container">
+                <h1 className="notes-title">MY NOTES</h1>
                     {notes.map((note) => (
                         <div key={note.id} className="note-card">
                             <h2>{note.title}</h2>
