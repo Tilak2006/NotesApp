@@ -1,17 +1,18 @@
 import "./Notes.css"
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { getNotes } from './api';
 
 function Notes(){
     const particlesInit = useCallback(async (engine) => {
         await loadSlim(engine);
     }, []);
-    const [notes, setNotes] = useState([
-        { id: 1, title: "React Basics", content: "Learn about components, props, and state." },
-        { id: 2, title: "Spring Boot API", content: "Build REST APIs using Spring Boot and Hibernate." },
-        { id: 3, title: "JavaScript ES6+", content: "Master modern JavaScript with ES6 features." },
-    ]);
+    const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        getNotes().then(response => setNotes(response.data));
+    }, []);
 
     return(
         <>
@@ -50,15 +51,18 @@ function Notes(){
                     />
                     <section className="notes-content">
                 
-                <div className="notes-container">
-                <h1 className="notes-title">MY NOTES</h1>
-                    {notes.map((note) => (
-                        <div key={note.id} className="note-card">
-                            <h2>{note.title}</h2>
-                            <p>{note.content}</p>
-                        </div>
-                    ))}
-                </div>
+                    <div className="notes-container">
+    <h1 className="notes-title">MY NOTES</h1>
+    {notes.map((note) => (
+        <div key={note.id} className="note-card">
+            <h2>{note.title}</h2>
+            <p>{note.content}</p>
+            <div className="extra-content">
+                <p>{note.content}</p>
+            </div>
+        </div>
+    ))}
+</div>
             </section>
         
         </>

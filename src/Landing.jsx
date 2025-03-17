@@ -3,22 +3,30 @@ import "./Landing.css"
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { createNote } from "./api"; 
 
 
 
 
-
-function Landing(){
+const Landing = () => {
     const particlesInit = useCallback(async (engine) => {
         await loadSlim(engine);
     }, []);
 
-    const [text, setText] = useState("")
+    const [text, setText] = useState("");
 
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
         e.preventDefault();
-        console.log("User Input: ", text);
-    }
+        if (!text.trim()) return; // Prevent empty submissions
+
+        console.log("User Input:", text); // Debugging log
+
+        const newNote = await createNote(text); // API call
+        if (newNote) {
+            alert("Note Created Successfully!"); // Temporary feedback
+            setText(""); // Clear input field after successful submission
+        }
+    };
 
     return(
         <>
